@@ -1,7 +1,8 @@
 # AI Interaction Log (`AI-LOG.md`)
 
 - **Course**: CSC13008 - Web Application Development (HK1 2026-2027)
-- **Assignment**: IA#1 — cartTotal with a harness
+- **Student ID**: 24120274
+- **Repository**: https://github.com/vancuong2703/24120274-wad-cart-starter
 - **AI Assistant Tool**: Antigravity (Powered by Gemini 3.8 Flash High)
 - **Date**: 2026-09-27
 
