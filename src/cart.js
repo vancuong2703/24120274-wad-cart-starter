@@ -1,5 +1,5 @@
 // Implement cartTotal here. See README.md for the specification.
-export function cartTotal(items, options) {
+export function cartTotal(items, options = {}) {
   if (!items || items.length === 0) {
     return 0
   }
@@ -7,7 +7,11 @@ export function cartTotal(items, options) {
   let subtotal = 0
 
   for (const item of items) {
-    if (typeof item.price !== 'number' || item.price < 0) {
+    if (
+      typeof item.price !== 'number' ||
+      Number.isNaN(item.price) ||
+      item.price < 0
+    ) {
       throw new RangeError(
         `Invalid price: ${item.price}. Price must be non-negative.`,
       )
@@ -26,11 +30,12 @@ export function cartTotal(items, options) {
     subtotal += item.price * item.qty
   }
 
-  const vat = subtotal * (options.vatRate || 0)
+  const opts = options || {}
+  const vat = subtotal * (opts.vatRate || 0)
   const shipping =
-    options.freeShipFrom !== undefined && subtotal >= options.freeShipFrom
+    opts.freeShipFrom !== undefined && subtotal >= opts.freeShipFrom
       ? 0
-      : options.shipFee || 0
+      : opts.shipFee || 0
 
   return Math.round(subtotal + vat + shipping)
 }
