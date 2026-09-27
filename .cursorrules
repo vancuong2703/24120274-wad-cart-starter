@@ -1,0 +1,11 @@
+# Cursor / AI Assistant Rules for cartTotal
+
+Read and strictly adhere to `RULES.md`.
+
+Key Directives:
+1. Stack: Plain JavaScript ES Modules (`node:test`, `node:assert/strict`).
+2. NEVER install or import runtime packages into `package.json`.
+3. NEVER return a string from `cartTotal` (return a rounded `number`).
+4. NEVER swallow errors (`RangeError` must be thrown on negative price or non-integer qty).
+5. Only touch `src/cart.js` and `test/cart.test.js`.
+6. Always ensure `npm run gate` passes before finishing.

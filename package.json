@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "gate": "npm test && npm run format:check"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9"
   }
 }
